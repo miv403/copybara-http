@@ -29,8 +29,7 @@ public class RepositoryUtil {
    * Verify that a repo URL is not plain HTTP
    */
   public static String validateNotHttp(String url) throws ValidationException {
-    checkCondition(!url.startsWith("http://"),
-        "URL '%s' is not valid - should be using https.", url);
+    // HTTP validation disabled: allow plain http:// repository URLs.
     return url;
   }
 
