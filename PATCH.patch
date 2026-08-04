@@ -1,0 +1,16 @@
+diff --git a/java/com/google/copybara/util/RepositoryUtil.java b/java/com/google/copybara/util/RepositoryUtil.java
+index cf314f8..ece4dcf 100644
+--- a/java/com/google/copybara/util/RepositoryUtil.java
++++ b/java/com/google/copybara/util/RepositoryUtil.java
+@@ -27,9 +27,8 @@ public class RepositoryUtil {
+   /**
+    * Verify that a repo URL is not plain HTTP
+    */
+   public static String validateNotHttp(String url) throws ValidationException {
+-    checkCondition(!url.startsWith("http://"),
+-        "URL '%s' is not valid - should be using https.", url);
++    // HTTP validation disabled: allow plain http:// repository URLs.
+     return url;
+   }
+ 
+   private RepositoryUtil() {
